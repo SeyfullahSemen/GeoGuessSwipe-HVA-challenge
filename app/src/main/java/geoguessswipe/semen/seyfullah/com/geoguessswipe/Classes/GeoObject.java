@@ -9,11 +9,8 @@ import geoguessswipe.semen.seyfullah.com.geoguessswipe.R;
 public class GeoObject {
 
     private int mGeoImageName;
+    private boolean isEurope;
 
-    public GeoObject(int mGeoImageName) {
-        this.mGeoImageName = mGeoImageName;
-
-    }
 
     public int getmGeoImageName() {
         return mGeoImageName;
@@ -22,6 +19,11 @@ public class GeoObject {
     public void setmGeoImageName(int mGeoImageName) {
         this.mGeoImageName = mGeoImageName;
     }
+
+    public boolean getIsEurope() {
+        return isEurope;
+    }
+
 
     public static final String[] PRE_DEFINED_GEO_OBJECT_NAMES = {
             "Denmark",
@@ -34,6 +36,17 @@ public class GeoObject {
             "Thailand"
     };
 
+    public static final boolean IS_IN_EUROPE[] = {
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false
+    };
+
     public static final int[] PRE_DEFINED_GEO_OBJECT_IMAGE_IDS = {
             R.drawable.img1_yes_denmark,
             R.drawable.img2_no_canada,
@@ -44,4 +57,10 @@ public class GeoObject {
             R.drawable.img7_yes_malta,
             R.drawable.img8_no_thailand
     };
+
+    public GeoObject(int position) {
+        this.mGeoImageName = PRE_DEFINED_GEO_OBJECT_IMAGE_IDS[position];
+        this.isEurope = IS_IN_EUROPE[position];
+    }
+
 }

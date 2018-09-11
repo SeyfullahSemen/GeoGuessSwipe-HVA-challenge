@@ -50,7 +50,6 @@ public class SwipeController extends Callback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-
     }
 
     @Override
