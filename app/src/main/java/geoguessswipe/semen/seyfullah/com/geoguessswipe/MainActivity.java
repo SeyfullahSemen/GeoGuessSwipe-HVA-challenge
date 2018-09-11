@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     GeoObjectAdapter mAdapter;
     private boolean isEurope = false;
     private List<GeoObject> mGeoObjects;
-    private GeoObject streetviewObject;
+    private GeoObject mGeoObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onRightClicked(int position) {
-                streetviewObject = mGeoObjects.get(position);
-                if (!streetviewObject.getIsEurope()) {
+                mGeoObject = mGeoObjects.get(position);
+                if (!mGeoObject.getIsEurope()) {
                     mAdapter.listGeoObject.remove(position);
                     mAdapter.notifyItemRemoved(position);
                     mAdapter.notifyItemRangeChanged(position, mAdapter.getItemCount());
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onLeftClicked(int position) {
-                streetviewObject = mGeoObjects.get(position);
-                if (streetviewObject.getIsEurope()){
+                mGeoObject = mGeoObjects.get(position);
+                if (mGeoObject.getIsEurope()){
                     mAdapter.listGeoObject.remove(position);
                     mAdapter.notifyItemRemoved(position);
                     mAdapter.notifyItemRangeChanged(position,mAdapter.getItemCount());
